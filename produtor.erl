@@ -1,10 +1,11 @@
 -module(producer).
 -export([start/4, produce/1]).
 
-%Chamada do processo
 start(IdP, IdB, T, Buffer) ->
     %% Mensagem de console para inicialização do produtor
-    io:format("Produtor gerado ~n"),
+    io:format("[Produtor] - Produtor Iniciado ~n"),
+
+    %% Chamada do produtor
     produce(Buffer).    
 
 produce(Buffer) ->

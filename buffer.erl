@@ -3,5 +3,4 @@
 
 start() ->
     %% Mensagem de console para inicialização do buffer
-    io:format("Buffer criado").
-
+    io:format("[Buffer] - Buffer Iniciado").
