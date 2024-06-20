@@ -4,4 +4,3 @@
 start() ->
     io:format("Buffer criado").
 
-
