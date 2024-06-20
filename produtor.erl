@@ -1,4 +1,4 @@
--module(producer).
+-module(produtor).
 -export([start/4, produce/1]).
 
 start(IdP, IdB, T, Buffer) ->
