@@ -2,6 +2,7 @@
 -export([start/4]).
 
 start(IdC, IdB, T1, T2) ->
+    %% Mensagem de console para inicialização do buffer
     io:format("Consumidor iniciado ~n"),
     loop(IdC, IdB,TimeToConsume).
 
