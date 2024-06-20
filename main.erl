@@ -2,17 +2,17 @@
 -export([start/0, start/2]).
 
 start() ->
-    %% Console message of start program
+    %% Mensagem de console para inicialização do programa
     io:format("Iniciado ~n"),
 
-    %% Start the buffer process
+    %% Inicialização do buffer
     Buffer = spawn(buffer, start, []),
 
-    %% Start producer processes
+    %% Inicialização do produtor
     P1 = spawn(producer, start, [Buffer]),
     P2 = spawn(producer, start, [Buffer]),
 
-    %% Start consumer processes
+    %% Inicialização do consumidor
     spawn(consumer, start, [Buffer]),
     spawn(consumer, start, [Buffer]),
     spawn(consumer, start, [Buffer]),
