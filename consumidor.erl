@@ -3,7 +3,7 @@
 
 start(Name, Buffer) ->
     %% Mensagem de console para inicialização do consumidor
-    io:format("[Consumidor] - Consumidor iniciado ~n"),
+    io:format("[~p] - Consumidor iniciado ~n", [Name]),
     loop(Name, Buffer).
 
 loop(Name, Buffer) ->
@@ -19,6 +19,6 @@ loop(Name, Buffer) ->
             io:format("[~p] - Temporizador de ~p finalizado~n", [Name, Item]);
 
         {empty} ->
-            io:format("[~p] - Buffer Está Vazio~n", Name)
+            io:format("[~p] - Buffer Está Vazio~n", [Name])
     end,
     loop(Name, Buffer).

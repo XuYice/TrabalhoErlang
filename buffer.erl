@@ -8,7 +8,7 @@ start() ->
 
 buffer(Products) ->
     %% Mensagem de console com o conteúdo da lista
-    io:format("[Buffer] - Lista atual: ~p~n", Products),
+    io:format("[Buffer] - Lista atual: ~p~n", [Products]),
 
     %% Espera por mensagens de produção e consumo
     receive

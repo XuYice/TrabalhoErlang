@@ -3,14 +3,14 @@
 
 start(Name, Buffer) ->
     %% Mensagem de console para inicialização do produtor
-    io:format("[~p] - Iniciado ~n", Name),
+    io:format("[~p] - Iniciado ~n", [Name]),
     loop(Name, Buffer).    
 
-loop(Buffer, Name) ->
+loop(Name, Buffer) ->
     %% Definição de segundos
     Value = value(),
     io:format("[~p] - Tempo definido de ~p segundos~n", [Name, Value]),
-    Time = Value * 1000, % Converte para milissegundos
+    Time = round(Value * 1000), % Converte para milissegundos
 
     %% Temporizador
     io:format("[~p] - Temporizador de ~p iniciado~n", [Name, Time]),
