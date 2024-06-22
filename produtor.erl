@@ -4,8 +4,6 @@
 start(Name, Buffer) ->
     %% Mensagem de console para inicialização do produtor
     io:format("[~p] - Iniciado ~n", Name),
-
-    %% Chamada do produtor
     loop(Buffer, Name).    
 
 loop(Buffer, Name) ->
@@ -23,9 +21,8 @@ loop(Buffer, Name) ->
     Buffer ! {produtor, Time},
     loop(Buffer, Name).
 
-% Função para gerar valor de 3.5 ou 7
+%% Função para gerar valor de 3.5 ou 7
 value() ->
-    % Gera um número aleatório entre 0 e 1
     RandomNumber = random:uniform(),
     case RandomNumber < 0.5 of
         true -> 3.5;

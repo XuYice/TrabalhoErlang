@@ -4,8 +4,6 @@
 start(IdC, IdB, T1, T2) ->
     %% Mensagem de console para inicialização do consumidor
     io:format("[Consumidor] - Consumidor iniciado ~n"),
-
-    %% Chamada do consumidor
     loop(IdC, IdB, T1).
 
 loop(ConsumerId, BufferPid, TimeToConsume) ->
