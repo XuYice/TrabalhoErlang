@@ -8,23 +8,29 @@ start(Name, Buffer) ->
 
 loop(Name, Buffer) ->
     %% Definição de segundos
-    Value = value(),
-    Time = round(Value * 1000), % Converte para milissegundos
-    io:format("[~p] - Tempo definido de ~p segundos~n", [Name, Value]),
+    Time = value(),
+    io:format("[~p] - Tempo definido de ~p milissegundos~n", [Name, Time]),
 
     %% Temporizador
     io:format("[~p] - Temporizador de ~p iniciado~n", [Name, Time]),
     timer:sleep(Time),
     io:format("[~p] - Temporizador de ~p finalizado~n", [Name, Time]),
 
-    %% Envio de mensagem com produto para buffer
-    Buffer ! {produtor, Time},
-    loop(Buffer, Name).
+    %% Tentativa de enviar mensagem com produto para buffer
+    try
+        Buffer ! {produtor, Time}
+    catch
+        error:badarg ->
+            %% Tratamento específico para badarg (argumento inválido)
+            io:format("[~p] - Erro ao enviar mensagem para o buffer: argumento inválido~n", [Name])
+    end,
 
-%% Função para gerar valor de 3.5 ou 7
+    loop(Name, Buffer).
+
+%% Função para gerar valor de 3.5 ou 7 milissegundos
 value() ->
-    RandomNumber = random:uniform(),
+    RandomNumber = rand:uniform(),
     case RandomNumber < 0.5 of
-        true -> 3.5;
-        false -> 7
+        true -> round(3.5 * 1000);
+        false -> round(7 * 1000)
     end.
