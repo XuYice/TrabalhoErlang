@@ -9,8 +9,8 @@ start(Name, Buffer) ->
 loop(Name, Buffer) ->
     %% Definição de segundos
     Value = value(),
-    io:format("[~p] - Tempo definido de ~p segundos~n", [Name, Value]),
     Time = round(Value * 1000), % Converte para milissegundos
+    io:format("[~p] - Tempo definido de ~p segundos~n", [Name, Value]),
 
     %% Temporizador
     io:format("[~p] - Temporizador de ~p iniciado~n", [Name, Time]),
