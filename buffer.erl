@@ -3,10 +3,10 @@
 
 start() ->
     %% Mensagem de console para inicialização do buffer
-    io:format("[Buffer] - Buffer Iniciado").
+    io:format("[Buffer] - Buffer Iniciado"),
+    buffer([]).
 
 buffer(Products) ->
-
     %% Espera por mensagens de produção e consumo
     receive
 
