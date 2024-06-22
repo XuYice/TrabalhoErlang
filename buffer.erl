@@ -3,7 +3,7 @@
 
 start() ->
     %% Mensagem de console para inicialização do buffer
-    io:format("[Buffer] - Buffer Iniciado"),
+    io:format("[Buffer] - Buffer Iniciado~n"),
     buffer([]).
 
 buffer(Products) ->
