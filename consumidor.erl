@@ -10,9 +10,15 @@ loop(Name, Buffer) ->
     %% Envia uma mensagem ao buffer para consumir um item
     Buffer ! {consumidor, self()},
     receive
-        {consume, Item} ->
-            io:format("[Buffer] - Item Consumido: ~p~n", [Item]);
+        {consumidor, Item} ->
+            io:format("[~p] - Item Consumido: ~p~n", [Name, Item]),
+
+            %% Temporizador
+            io:format("[~p] - Temporizador de ~p iniciado~n", [Name, Item]),
+            timer:sleep(Item),
+            io:format("[~p] - Temporizador de ~p finalizado~n", [Name, Item]);
+
         {empty} ->
-            io:format("[Buffer] - Buffer Está Vazio~n")
+            io:format("[~p] - Buffer Está Vazio~n", Name)
     end,
     loop(Name, Buffer).

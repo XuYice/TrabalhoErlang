@@ -7,9 +7,11 @@ start() ->
     buffer([]).
 
 buffer(Products) ->
+    %% Mensagem de console com o conteúdo da lista
+    io:format("[Buffer] - Lista atual: ~p~n", Products),
+
     %% Espera por mensagens de produção e consumo
     receive
-
         %% Adiciona itens ao buffer quando recebe mensagens do produtor
         {produtor, Item} ->
             NewProducts = [Item | Products],
