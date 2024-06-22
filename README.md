@@ -24,9 +24,9 @@ Certifique-se de ter o ambiente Erlang instalado em seu sistema. Você pode baix
 
 ## Execução
 
-   Inicie a linha de comando do Erlang e execute a função start do arquivo main
+   Inicie a linha de comando do Erlang e execute a função start do arquivo main, vale ressaltar que o comando de compilação colocou os arquivos compilados em uma pasta chamada beam, então abra a linha de comando do Erlang indicando o caminho para esta pasta conforme indicado no bash abaixo.
 
    ```bash
-   erl
+   erl -pa /caminho/para/sua/pasta/beam
    main:start().
    ```
