@@ -4,7 +4,7 @@
 start(Name, Buffer) ->
     %% Mensagem de console para inicialização do produtor
     io:format("[~p] - Iniciado ~n", Name),
-    loop(Buffer, Name).    
+    loop(Name, Buffer).    
 
 loop(Buffer, Name) ->
     %% Definição de segundos

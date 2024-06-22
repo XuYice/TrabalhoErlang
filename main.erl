@@ -13,9 +13,9 @@ start() ->
     P2 = spawn(produtor, start, [produtor2, Buffer]),
 
     %% Inicialização dos consumidores
-    C1 = spawn(consumidor, start, [Buffer]),
-    C2 = spawn(consumidor, start, [Buffer]),
-    C3 = spawn(consumidor, start, [Buffer]),
-    C4 = spawn(consumidor, start, [Buffer]),
+    C1 = spawn(consumidor, start, [consumidor1, Buffer]),
+    C2 = spawn(consumidor, start, [consumidor2, Buffer]),
+    C3 = spawn(consumidor, start, [consumidor3, Buffer]),
+    C4 = spawn(consumidor, start, [consumidor4, Buffer]),
 
     {Buffer, P1, P2, C1, C2, C3, C4}.

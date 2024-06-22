@@ -1,18 +1,18 @@
 -module(consumidor).
--export([start/4]).
+-export([start/2]).
 
-start(IdC, IdB, T1, T2) ->
+start(Name, Buffer) ->
     %% Mensagem de console para inicialização do consumidor
     io:format("[Consumidor] - Consumidor iniciado ~n"),
-    loop(IdC, IdB, T1).
+    loop(Name, Buffer).
 
-loop(ConsumerId, BufferPid, TimeToConsume) ->
+loop(Name, Buffer) ->
     %% Envia uma mensagem ao buffer para consumir um item
-    BufferPid ! {consume, self()},
+    Buffer ! {consumidor, self()},
     receive
         {consume, Item} ->
             io:format("[Buffer] - Item Consumido: ~p~n", [Item]);
         {empty} ->
             io:format("[Buffer] - Buffer Está Vazio~n")
     end,
-    loop(ConsumerId, BufferPid, TimeToConsume).
+    loop(Name, Buffer).
