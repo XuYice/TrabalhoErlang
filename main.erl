@@ -9,8 +9,8 @@ start() ->
     Buffer = spawn(buffer, start, []),
 
     %% Inicialização dos produtores
-    P1 = spawn(produtor, start, [Buffer]),
-    P2 = spawn(produtor, start, [Buffer]),
+    P1 = spawn(produtor, start, [produtor1, Buffer]),
+    P2 = spawn(produtor, start, [produtor2, Buffer]),
 
     %% Inicialização dos consumidores
     C1 = spawn(consumidor, start, [Buffer]),
