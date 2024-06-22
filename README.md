@@ -20,6 +20,7 @@ Certifique-se de ter o ambiente Erlang instalado em seu sistema. Você pode baix
 
    ```bash
    erlc -o beam buffer.erl produtor.erl consumidor.erl main.erl
+   ```
 
 ## Execução
 
@@ -28,3 +29,4 @@ Certifique-se de ter o ambiente Erlang instalado em seu sistema. Você pode baix
    ```bash
    erl
    main:start().
+   ```
