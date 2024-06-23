@@ -19,7 +19,11 @@ loop(Name, Buffer) ->
             io:format("[~p] - Temporizador de ~p finalizado~n", [Name, Item]);
 
         {empty} ->
-            timer:sleep(5000)
+            timer:sleep(2500);
             %io:format("[~p] - Buffer Está Vazio~n", [Name])
+    
+    other ->
+        io:format("[~p] - Falha na comunicação com o Buffer ~n", [Name])
     end,
+
     loop(Name, Buffer).
