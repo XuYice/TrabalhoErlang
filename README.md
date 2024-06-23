@@ -12,8 +12,8 @@ Certifique-se de ter o ambiente Erlang instalado em seu sistema. Você pode baix
    Clone o repositório que contém o código fonte do programa Erlang.
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   https://github.com/RetiredXu/TrabalhoErlang.git
+   cd TrabalhoErlang
 
 2. **Compilação:**
    Compile o código fonte usando o Erlang Compiler (erlc).
