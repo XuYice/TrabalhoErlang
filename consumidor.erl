@@ -15,7 +15,7 @@ loop(Name, Buffer) ->
 
             %% Temporizador
             io:format("[~p] - Temporizador de ~p iniciado~n", [Name, Item]),
-            timer:sleep(Item),
+            timer:sleep(2 * Item),
             io:format("[~p] - Temporizador de ~p finalizado~n", [Name, Item]);
 
         {empty} ->
